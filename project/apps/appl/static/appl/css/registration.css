@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'montserratbold';
+    src: url('fonts/montserrat-bold-webfont.woff2') format('woff2'),
+         url('fonts/montserrat-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+*{
+    /* outline: 1px solid pink; */
+    font-family: montserratbold, Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #F5F5F5;
+}
+.container {
+    padding: 20px 20px;
+    text-align: center;
+}
+.reg {
+    border: 1px solid black;
+    width: 40vw;
+    display: inline-block;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    border-radius: 8%;
+    background-color: white;
+
+}
+
+    .reg input{
+        display: block;
+        margin: 1vw 10vw;
+        width: 20vw;
+        height: 30px;
+        font-size: 15px;
+        background-color: white;
+
+    }
+
+    .reg .submit {
+        width: 7vw;
+        height: 28px;
+        background-color: green;
+        font-size: 15px;
+        color: white;
+        text-align: center;
+        margin: 1vw 17vw;
+    }
+
+    .reg p{
+        background-color: white;
+    }
+
+    .reg a{
+        background-color: white;
+    }
+
+    .messages{
+        color: red;
+        background-color: white;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+        .messages li{
+            background-color: white;
+        }

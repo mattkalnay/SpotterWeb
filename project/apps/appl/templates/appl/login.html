@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'appl/css/login.css' %}">
+</head>
+<body>
+    <div class='container'>
+            <h1>Login here!</h1>
+
+        <form action='/logprocess' method='POST' class='log'>
+            {% csrf_token %}
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+          {% endif %}
+            Email:<input type='text' name='login_email'>
+            Password:<input type='password' name='login_pass'>
+            <input type='submit' value='Login!' class='submit'>
+            <p>Not a Member?  <a href='/registration'>Sign Up Here!</a></p>
+    </div>
+
+</body>
+</html>

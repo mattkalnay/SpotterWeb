@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'montserratbold';
+    src: url('fonts/montserrat-bold-webfont.woff2') format('woff2'),
+         url('fonts/montserrat-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*{
+    /* outline: 1px solid pink; */
+    font-family: montserratbold, Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #e9ebee;
+}
+
+.navbar{
+    background-color: #f9f9f9;
+    height: 70px;
+    /* margin-bottom: 10px; */
+
+}
+    .navbar-nav {
+        background-color: #f9f9f9;
+
+    }
+    .navbar-link{
+        justify-content: flex-end;
+        background-color: #f9f9f9;
+
+    }
+
+    .navbar-link .in-link {
+        margin-right: 2rem;
+
+    }
+
+        .log{
+            background-color: #007bff;
+            color: white;
+
+        }
+
+.containall {
+    /* text-align: center; */
+    background-color: #A3C7F8;
+    padding-top: 20px;
+    /* width: 3000px; */
+
+
+}
+.container1 {
+    display: block;
+    min-height: 1000px;
+    /* width: 75vw; */
+    /* margin-left: 6vw; */
+    padding: 1vw 1vw;
+    text-align: center;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .container1 h1{
+        margin-bottom: 20px;
+    }
+    .container1 .challenges {
+        width: 100%;
+        border-collapse: collapse;
+        outline: 1px solid black;
+    }
+
+    .container1 table, th, td {
+        outline: 1px solid black;
+    }
+    .container1 th{
+        font-weight: bold;
+    }
+    .container1 th, td{
+        padding: 10px;
+    }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'appl/css/registration.css' %}">
+</head>
+<body>
+    <div class='container'>
+        <h1>Register here!</h1>
+
+        <form action='/register' method='POST' class="reg">
+            {% csrf_token %}
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+          {% endif %}
+
+
+            Username:
+            <input type='text' name='username' class='input'>
+            Email:
+            <input type='text' name='email'>
+            Password:
+            <input type='password' name='password'>
+            Confirm password:
+            <input type='password' name='password_con'>
+            Bench:
+            <input type='text' name='bench'>
+            Squat:
+            <input type='text' name='squat'>
+            Deadlift:
+            <input type='text' name='deadlift'>
+
+            <input type='submit' value='Register!' class='submit'>
+            <p>Already a Member?  <a href='/login'>Log In Here!</a></p>
+        </form>
+    </div>
+</body>
+</html>

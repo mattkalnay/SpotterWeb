@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'appl/css/challenge.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+            <a class="navbar-brand branding" href="/dashboard">SpotterWeb</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-link text-right" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <a class="nav-item nav-link active in-link log" href="/create">Create a Challenge!</a>
+                </div>
+            </div>
+            </nav>
+<div class="containall">
+    <div class='container1 sm-4 med-3'>
+        <h1>{{information.name}}</h1>
+        <ul>
+            <li>Goal: {{information.goal}}</li>
+            <li>Stakes:  {{information.stakes}}</li>
+            <li>Start Date: {{information.created_at}}</li>
+            <li>End Date: {{information.end}}</li>
+        </ul>
+        <div class='updater'>
+            <h3>Update My Information</h3>
+            <form class='update' action='update/{{request.session.id}}/{{information.id}}' method='POST'>
+                {% csrf_token %} 
+
+    
+                Bench:
+                <input class='input' type='text' name='bench' value={{me.bench}}>
+                Squat:
+                <input class='input' type='text' name='squat' value={{me.squat}}>
+                Deadlift:
+                <input class='input' type='text' name='deadlift' value={{me.deadlift}}>
+                <input type='submit' value='Submit'>
+            </form>
+        </div>
+        <div class='table'>
+            <h3>Latest Rankings:</h3>
+            Bench:
+            <table class='bench'>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Lbs</th>
+                    <th>Last Check In</th>
+                </tr>
+                {% for bencher in benchers %}
+                <tr>
+                    <td>{{ forloop.counter }}.</td>
+                    <td>{{bencher.username}} </td>
+                    <td>{{bencher.bench}}</td>
+                    <td>{{bencher.updated_at}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            Squat:
+            <table class='squat'>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Lbs</th>
+                    <th>Last Check In</th>
+                </tr>
+                {% for squatter in squatters %}
+                <tr>
+                    <td>{{ forloop.counter }}.</td>
+                    <td>{{squatter.username}} </td>
+                    <td>{{squatter.squat}}</td>
+                    <td>{{squatter.updated_at}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            Deadlift:
+            <table class='lift'>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Lbs</th>
+                        <th>Last Check In</th>
+                    </tr>
+                    {% for lifter in lifters %}
+                    <tr>
+                        <td>{{ forloop.counter }}.</td>
+                        <td>{{lifter.username}} </td>
+                        <td>{{lifter.deadlift}}</td>
+                        <td>{{lifter.updated_at}}</td>
+                    </tr>
+                    {% endfor %}
+
+                     
+
+                
+            </table>
+        </div>
+    </div>
+
+    <div class='container2 sm-4 med-3'>
+        <h1>Message Board</h1>
+        <div class='add'>
+            <h5>Send a Message:</h5>
+            <form action='/messageup/{{information.id}}' method = "post" class='form'> 
+                {% csrf_token %} 
+                <textarea class='content' name='content'></textarea>
+                <div class='submit'>
+                    <input type='submit' value='Upload'>
+                </div>
+            </form> 
+      
+        <div class="mess">
+            <h5>Messages Received</h5>
+            {% for message in messages %}
+            <p><u><b>{{message.sender.username}}</b>:</u> {{message.content}}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

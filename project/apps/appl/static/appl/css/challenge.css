@@ -1,0 +1,191 @@
+@font-face {
+    font-family: 'montserratbold';
+    src: url('fonts/montserrat-bold-webfont.woff2') format('woff2'),
+         url('fonts/montserrat-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*{
+    /* outline: 1px solid pink; */
+    font-family: montserratregular, Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #e9ebee;
+}
+
+.navbar{
+    background-color: white;
+    height: 70px;
+    margin-bottom: 10px;
+
+}
+    .navbar-nav {
+        background-color: white;
+
+    }
+    .navbar-link{
+        justify-content: flex-end;
+        background-color: white;
+
+    }
+
+    .navbar-link .in-link {
+        margin-right: 2rem;
+
+    }
+
+        .log{
+            background-color: #007bff;
+            color: white;
+
+        }
+
+.containall {
+    background-color: #A3C7F8;
+    padding-top: 20px;
+}
+.container1 {
+    display: inline-block;
+    width: 40%;
+    margin-left: 6vw;
+    padding: 1vw 1vw;
+}
+
+    .container1 h1{
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: montserratbold, Arial, Helvetica, sans-serif;
+
+    }
+
+    .container1 ul{
+        text-align: left;
+    }
+
+    .container1 li{
+        text-align: left;
+
+    }
+
+    .container1 .updater {
+        text-align: center;
+    }
+    .container1 .updater {
+        text-align: center;
+    }
+        .container1 .updater .update .input {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+    .container1 .table {
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .container1 .table .bench {
+        margin-bottom: 30px;
+        outline: 1px solid black;
+        /* margin-left: -1vw; */
+        border-collapse: collapse;
+        width: 100%;
+
+    }
+    .container1 .table .squat {
+        margin-bottom: 30px;
+        outline: 1px solid black;
+        /* margin-left: -1vw; */
+        border-collapse: collapse;
+        width: 100%
+
+    }
+    .container1 .table th, td{
+        outline: 1px solid black;
+    }
+    .container1 .table .lift {
+        /* margin-bottom: 30px; */
+        outline: 1px solid black;
+        /* margin-left: 2vw; */
+        /* margin-left: -1vw; */
+        width: 100%;
+        border-collapse: collapse;
+
+    }
+
+.container2 {
+    display: inline-block;
+    width: 40%;
+    margin-left: 7vw;
+    padding: 1vw 1vw;
+    text-align: center;
+    vertical-align: top;
+}
+    .container2 h1{
+        font-family: montserratbold, Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .container2 .add {
+        margin-bottom: 50px;
+        vertical-align: top;
+    }
+
+        .container2 .add .form {
+            vertical-align: top;
+            margin-bottom: 30px;
+        }
+    .container2 .add .content{
+        text-align: left;
+        display: block;
+        height: 100px;
+        width: 60%;
+        margin-left: 20%;
+        margin-bottom: 10px;
+    }
+    .container2 .add .submit{
+        display: block;
+        text-align: center;
+        
+    }
+    .container2 h5{
+        margin-bottom: 20px;
+    }
+    .container2 .mess h5{
+        margin-bottom: 20px;
+    }
+    .container2 .mess p{
+        text-align: left;
+    }
+
+    @media only screen and (max-width: 480px) {
+        .sm-4 {
+            display: block;
+            width: 100%;
+            margin: 20px 0px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+
+    @media only screen and (min-width: 481px) and (max-width: 761px) {
+        .med-3 {
+            display: block;
+            width: 75%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+
+    }

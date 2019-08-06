@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create a Challenge!</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'appl/css/create.css' %}">
+</head>
+<body>
+    <div class='container'>
+        <form action='/createprocess' method='POST' class='create'>
+            {% csrf_token %}
+            <h3>Create a Challenge!</h3>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+          {% endif %}
+            Name:<input type='text' name='name'>
+            Goal:<input type='text' name='goal'>
+            Stakes (optional):<input type='text' name='stakes'>
+            End Date (optional):<input type='date' name='edate'>
+
+            Invite:<br>
+            {% for user in users %}
+            <input type="checkbox" name='invites' value='{{user.id}}' class='check'>{{user.username}}<br>
+
+            {% endfor %}
+    
+            <input type='submit' value='Create!' class='submit'>
+
+        </form>
+    </div>
+          
+
+</body>
+</html>
